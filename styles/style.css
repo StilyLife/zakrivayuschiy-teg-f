@@ -30,7 +30,7 @@
   display: grid;
   justify-items: center;
   justify-content: center;
-  font-family: var(--accent-font, "PressStart2P", sans-serif);
+  font-family: var(--accent-font, "PressStart2P", fantasy);
   background-color: var(--page-color, #ffffff);
   border: 2px solid var(--text-color, #000000);
   max-inline-size: 696px;
@@ -40,15 +40,17 @@
 
 .header-link {
   text-decoration: none;
-  font-size: 49px;
-  font-weight: 400;
-  padding-block-start: 120px;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  font-weight: var(--page-font-weight, 400);
+  padding-block-start: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
   padding-block-end: 20px;
+  line-height: 1;
 }
 
 .header__title {
-  font-size: 14px;
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   text-transform: uppercase;
+  line-height: 1;
 }
 
 .header__theme-menu {
@@ -74,6 +76,8 @@
   border: none;
   background-color: transparent;
   padding: 0;
+  line-height: 1;
+  appearance: none;
 }
 
 .theme-menu__button:hover {
@@ -102,7 +106,8 @@
   opacity: 0.6;
   position: absolute;
   animation: arrow 0.5s infinite ease-in-out alternate;
-  inset-inline-start: -20px;
+  left: -20px;
+  bottom: 0;
 }
 
 .theme-menu__button:focus {
@@ -117,19 +122,20 @@
 .content {
   display: grid;
   justify-items: center;
-  gap: 51px;
   padding-block-end: 105px;
 }
 
 .section {
   display: grid;
   font-family: var(--main-font, "Inter", sans-serif);
+  gap: 50px;
 }
 
 .card {
   border: 2px solid var(--text-color, #000000);
   background-color: var(--page-color, #ffffff);
   max-inline-size: 696px;
+  margin-inline: auto;
 }
 
 .card__title {
@@ -144,11 +150,13 @@
   object-fit: cover;
   object-position: center;
   inline-size: 100%;
+  aspect-ratio: 1 / 1;
 }
 
 .card__container-image {
   overflow: hidden;
   position: relative;
+  border-block-start: 2px solid var(--text-color);
 }
 
 .card__watermark {
@@ -161,7 +169,8 @@
     0 1px var(--page-color, #ffffff), 1px 0 var(--page-color, #ffffff),
     0 -1px var(--page-color, #ffffff);
   opacity: 0.5;
-  background-blend-mode: hard-light;
+  mix-blend-mode: hard-light;
+  line-height: 1;
 }
 
 .card__container-text {
@@ -173,7 +182,7 @@
 }
 
 .card__text {
-  padding: 27px 25px 0 25px;
+  padding: 30px 25px 0 22px;
   font-size: 18px;
 }
 
@@ -199,7 +208,7 @@
 }
 
 .card__icon-button:focus-visible {
-  border-color: var(--text-color, #000000);
+  outline-color: var(--text-color, #000000);
 }
 
 .card__like-button {
@@ -217,6 +226,7 @@
   background-color: var(--page-color, #ffffff);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
+  line-height: 1;
 }
 
 .button:focus {
@@ -257,6 +267,7 @@
 .modal {
   border: 2px solid var(--text-color, #000000);
   text-transform: uppercase;
+  font-size: 14px;
   padding: 25px 30px;
   line-height: 1.5;
   color: var(--text-color, #000000);
@@ -273,7 +284,7 @@
 
 .modal::backdrop {
   opacity: 0.75;
-  background-color: var(--text-color, #000000);
+  background-color: var(--modal-color, #000000);
 }
 
 .modal__content {
@@ -290,6 +301,7 @@
 
 .button-modal {
   inline-size: 100%;
+  text-transform: uppercase;
 }
 
 .button-save {
