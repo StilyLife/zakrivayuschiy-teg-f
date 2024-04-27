@@ -123,6 +123,7 @@
   display: grid;
   justify-items: center;
   padding-block-end: 105px;
+  gap: 52px;
 }
 
 .section {
@@ -182,7 +183,7 @@
 }
 
 .card__text {
-  padding: 30px 25px 0 22px;
+  padding: 25px 25px 0 25px;
   font-size: 18px;
 }
 
